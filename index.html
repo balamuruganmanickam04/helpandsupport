@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help &amp; Support | Digital Craft Labs</title>
+<meta name="description" content="Digital Craft Labs builds Android apps around your needs and cuts the day-to-day manual work. Get help, report a problem, or ask for a custom app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4F7FB;--panel:#FFFFFF;--ink:#101A3A;--muted:#55607E;--brand:#2F4BFF;--brandink:#FFFFFF;--mint:#C6F2E0;--line:rgba(16,26,58,.07);--rule:rgba(16,26,58,.16);--mark:#FFC24B}
+@media (prefers-color-scheme:dark){:root{--paper:#0C1226;--panel:#141C38;--ink:#E8EEFF;--muted:#9AA7C9;--brand:#6F86FF;--brandink:#0C1226;--mint:#173C3A;--line:rgba(232,238,255,.06);--rule:rgba(232,238,255,.18)}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;margin:0}
+a{color:inherit}
+.wrap{width:min(1080px,92vw);margin:0 auto}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;text-decoration:none;letter-spacing:-.01em}
+.brand svg{width:34px;height:34px;flex:none}
+nav{display:flex;gap:22px;font-weight:500;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{position:relative;padding:44px 0 72px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:30px 30px;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+h1{font-size:clamp(40px,6.4vw,70px);font-weight:800}
+h1 mark{background:linear-gradient(transparent 62%,var(--mark) 62% 92%,transparent 92%);color:inherit;padding:0 .08em}
+.lead{font-size:19px;color:var(--muted);max-width:34em;margin:20px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--brand);background:var(--brand);color:var(--brandink)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn:hover{transform:translateY(-1px)}
+.swap{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.swap section{padding:20px 18px}
+.swap h3{font-size:16px;margin-bottom:12px}
+.swap ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:15px;line-height:1.35}
+.hand{background:var(--panel);border:2px dashed var(--rule);border-radius:16px 0 0 16px;transform:rotate(-1.6deg) translateX(8px);color:var(--muted)}
+.hand li{text-decoration:line-through;text-decoration-color:var(--mark);text-decoration-thickness:2px}
+.app{background:var(--brand);color:var(--brandink);border-radius:0 16px 16px 0;z-index:1}
+.app li{padding-left:24px;position:relative}
+.app li::before{content:"";position:absolute;left:2px;top:.35em;width:12px;height:7px;border-left:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:rotate(-45deg)}
+
+/* sections */
+section.block{padding:72px 0}
+h2{font-size:clamp(30px,4.4vw,44px);font-weight:800;margin-bottom:12px}
+.sub{color:var(--muted);max-width:38em;margin:0 0 36px}
+.build{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 44px}
+.build div{border-left:4px solid var(--brand);padding-left:18px}
+.build h3{font-size:21px;margin-bottom:6px}
+.build p{margin:0;color:var(--muted)}
+.build .more{border-color:var(--mark)}
+
+.how{background:var(--panel);border-block:1px solid var(--rule)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:14px}
+.steps li::before{content:counter(s);display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;color:var(--brand);line-height:1;margin-bottom:10px}
+.steps h3{font-size:19px;margin-bottom:6px}
+.steps p{margin:0;color:var(--muted);font-size:15.5px}
+
+.faq{max-width:760px}
+details{border-top:1px solid var(--rule);padding:4px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:600;font-size:18px;padding:16px 28px 16px 0;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:26px;font-weight:400;color:var(--brand);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 18px;color:var(--muted);max-width:38em}
+
+.contact{background:var(--brand);color:var(--brandink);border-radius:28px;padding:clamp(28px,5vw,56px);margin:0 0 72px}
+.contact h2{margin-bottom:10px}
+.contact p{margin:0 0 22px;max-width:36em;opacity:.92}
+.mail{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(20px,3.6vw,34px);letter-spacing:-.01em;word-break:break-all;margin-bottom:26px;text-decoration-thickness:3px;text-underline-offset:6px;text-decoration-color:var(--mark)}
+.contact .btn{background:var(--brandink);color:var(--brand);border-color:var(--brandink)}
+.contact .btn.alt{background:transparent;color:var(--brandink);border-color:rgba(255,255,255,.5)}
+@media (prefers-color-scheme:dark){.contact .btn.alt{border-color:rgba(12,18,38,.5)}}
+.tip{margin-top:20px!important;font-size:15px}
+
+footer{padding:0 0 40px;color:var(--muted);font-size:15px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:var(--ink)}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .build{grid-template-columns:1fr}
+  nav{display:none}
+}
+@media (max-width:480px){.steps{grid-template-columns:1fr}.swap{grid-template-columns:1fr}.hand{border-radius:16px 16px 0 0;transform:none}.app{border-radius:0 0 16px 16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}summary::after{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" aria-label="Digital Craft Labs home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--brand)"/><path d="M13 11 7 16l6 5M19 11l6 5-6 5" stroke="var(--brandink)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Digital Craft Labs
+    </a>
+    <nav aria-label="Main">
+      <a href="#build">What we build</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">Help</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+</div>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Stop doing it by hand. <mark>Let an app do it.</mark></h1>
+        <p class="lead">Digital Craft Labs builds Android apps around the way you actually work, so the jobs you repeat every day take a tap instead of an hour.</p>
+        <div class="btns">
+          <a class="btn" href="#contact">Ask for an app</a>
+          <a class="btn alt" href="#faq">Get help</a>
+        </div>
+      </div>
+      <div class="swap" role="group" aria-label="Doing it by hand compared with using an app">
+        <section class="hand"><h3>By hand</h3><ul><li>Writing records in a notebook</li><li>Sending the same reminder to everyone</li><li>Adding up totals at night</li></ul></section>
+        <section class="app"><h3>With an app</h3><ul><li>Records saved as you go</li><li>Reminders sent in one tap</li><li>Totals ready when you open it</li></ul></section>
+      </div>
+    </div>
+  </div>
+
+  <section class="block" id="build">
+    <div class="wrap">
+      <h2>What we can build for you</h2>
+      <p class="sub">If a job is repetitive, slow, or easy to get wrong, an app can usually take it over. Here are some places to start.</p>
+      <div class="build">
+        <div><h3>Records and attendance</h3><p>Students, staff, members, or customers kept in one place instead of notebooks and spreadsheets.</p></div>
+        <div><h3>Billing and payments</h3><p>Invoices, receipts, and reminders for the people who owe you.</p></div>
+        <div><h3>Stock and orders</h3><p>See what you have, what sold, and what to reorder.</p></div>
+        <div><h3>Forms and reports</h3><p>Collect details on the phone and get a clear summary, not a pile of paper.</p></div>
+        <div class="more"><h3>Something else?</h3><p>If you do it again and again, it is probably worth an app. Tell us about it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block how" id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="sub">Four steps from the problem to an app on your phone.</p>
+      <ol class="steps">
+        <li><h3>Tell us the task</h3><p>Email us what you do by hand today and who does it.</p></li>
+        <li><h3>Get a plan</h3><p>We reply with what the app would do and how we would build it.</p></li>
+        <li><h3>Build and try</h3><p>You test early versions on your own phone and tell us what to change.</p></li>
+        <li><h3>Launch and support</h3><p>We help you install it and fix issues after it goes live.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap">
+      <h2>Help and support</h2>
+      <p class="sub">Quick answers. If yours is not here, email us.</p>
+      <div class="faq">
+        <details><summary>How do I ask for a custom app?</summary><p>Email us using the "Ask for an app" button below. Tell us what work you do by hand today, who would use the app, and when you need it. We will reply with questions or a plan.</p></details>
+        <details><summary>What if I only have a rough idea?</summary><p>That is fine. Describe the problem in your own words, even if you are not sure what the app should look like. We will help you shape it.</p></details>
+        <details><summary>How do I report a problem with one of our apps?</summary><p>Use the "Report a problem" button below and fill in the app name, your phone model, your Android version, and what happened. A screenshot helps a lot.</p></details>
+        <details><summary>Can I request a new feature for an app I use?</summary><p>Yes. Email us what you would like the app to do and why. We read every suggestion.</p></details>
+        <details><summary>How do I ask about my data or privacy?</summary><p>Write to us at the email address below with the app name and your question. We will help you with it.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="contact" id="contact">
+      <h2>Write to us</h2>
+      <p>One inbox for requests, bug reports, and questions. We read every email and reply as soon as we can.</p>
+      <a class="mail" href="mailto:support.digitalcraftlabs@gmail.com">support.digitalcraftlabs@gmail.com</a>
+      <div class="btns">
+        <a class="btn" href="mailto:support.digitalcraftlabs@gmail.com?subject=App%20request&amp;body=Hi%20Digital%20Craft%20Labs%2C%0A%0AWhat%20work%20do%20you%20do%20by%20hand%20today%3F%0A%0A%0AWho%20will%20use%20the%20app%3F%0A%0A%0AWhen%20do%20you%20need%20it%3F%0A">Ask for an app</a>
+        <a class="btn alt" href="mailto:support.digitalcraftlabs@gmail.com?subject=App%20problem&amp;body=App%20name%3A%0APhone%20model%3A%0AAndroid%20version%3A%0A%0AWhat%20happened%3F%0A%0A(Please%20attach%20a%20screenshot%20if%20you%20can.)">Report a problem</a>
+        <a class="btn alt" href="mailto:support.digitalcraftlabs@gmail.com?subject=Question">Ask a question</a>
+      </div>
+      <p class="tip">Tip: a screenshot or a short description of each step helps us fix problems faster.</p>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>&copy; 2026 Digital Craft Labs</span>
+    <a href="mailto:support.digitalcraftlabs@gmail.com">support.digitalcraftlabs@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>
